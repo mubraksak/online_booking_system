@@ -42,12 +42,10 @@ class User  extends CI_Controller {
     }
     //complete product booking
     public function order(){
-        //$this->form_validation->set_rules('product_category', 'product_category', 'trim|required');
-        $this->form_validation->set_rules('product_name', 'product_name', 'trim|required');
-        //$this->form_validation->set_rules('product_price', 'product_price', 'trim|required');
-        $this->form_validation->set_rules('checkin_date', 'checkin_date', 'trim|required');
-        $this->form_validation->set_rules('checkout_date', 'checkout_date', 'trim|required');
-        $this->form_validation->set_rules('num_user', 'num_user', 'trim|required');
+        $this->form_validation->set_rules('booking_number', 'booking_number', 'trim|required');
+        $this->form_validation->set_rules('product_id', 'product_id', 'trim|required');
+        $this->form_validation->set_rules('user_id', 'user_id', 'trim|required');
+        $this->form_validation->set_rules('status_id', 'status_id', 'trim|required');
             //check if validation run 
             if ($this->form_validation->run() == FALSE) {
                 redirect('Booking/error');

@@ -22,12 +22,9 @@ Class Booking_model extends CI_Model{
     public function booking() {
         $data = array(
             'booking_number' => $this->input->post('booking_number'),
-            'booking_status' => 2,
-            'checkin_date' => $this->input->post('checkin_date'),
-            'checkout_date' => $this->input->post('checkout_date'),
-            'num_user' => $this->input->post('num_user'),
-            'product_name' => $this->input->post('product_name'),
-            'product_price' => $this->input->post('product_price'),
+            'status' => $this->input->post('status'),
+            'product' => $this->input->post('product'),
+            'user' => $this->input->post('user'),
             
             
         );

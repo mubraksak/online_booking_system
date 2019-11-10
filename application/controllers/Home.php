@@ -18,11 +18,14 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	
 
 	// this loads index page
-	public function index(){
+	public function index($user_id = "user_id"){
+		$data['user'] = $this->User_model->get_single_user($user_id);
+		$data = $this->User_model->get_single_user($user_id);
 		// this loads the index view
-		$this->load->view('index');
+		$this->load->view('index', $data);
 	}
 	
 	// this loads login page

@@ -19,24 +19,36 @@ Class Admin_model extends CI_Model{
     //
     public function get_bookings($booking_id) {
         $this->db->select('*');
-      //$this->db->where('kid_id', $kid_id);
+        //$this->db->where('kid_id', $kid_id);
         $this->db->from('booking');
         $this->db->join('users', 'user_id = users');
         $this->db->join('status', 'status_id = status');
+        $this->db->join('product', 'product_id = product');
         $query = $this->db->get();
         return $query->result();
     }
 
+    public function get_booking_id($booking_id){
+        $this->db->where('booking_id', $booking_id);
+        $this->db->select('*');
+        $this->db->from('booking');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    //
     public function get_single_booking($booking_id) {
         $this->db->select('*');
         //$this->db->where('booking_id', $booking_id);
         $this->db->from('booking');
         $this->db->join('users', 'user_id = users');
         $this->db->join('status', 'status_id = status');
+        $this->db->join('product', 'product_id = product');
         $query = $this->db->get();
         return $query->result();
     }
 
+    // model allow to update booking status
     public function update_booking($booking_id, $data) {
         $this->table = 'booking';
         $this->db->where('booking_id', $booking_id);

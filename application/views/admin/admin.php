@@ -19,24 +19,17 @@
   <?php $this->load->view('nav/admin_nav') ?>
 
   <br><br><br><br><br>
-  <!-- <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url(); ?>assets/img/city-profile.jpg');"></div> -->
     <div class="container">
     <div class="profile-content">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
-            <!-- <h1>Di-Hub For Kids</h1>
-            <h3 class="title text-center">Subtitle</h3> -->
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="main main-raised">
-
-
-
-
 
   <div class="content">
   <div class="section text-center">
@@ -67,19 +60,19 @@
                           Gender 
                         </th>
                         <th>
-                        class
+                        email
                         </th>
                         <th>
-                          email
+                          phone number
                         </th>
                         <th>
-                        phone
+                        booking mumber
                         </th>
                         <th>
-                       
+                        booked item
                         </th>
                         <th>
-                      booking number
+                      booking status
                         </th>
                         <th>
                       Action
@@ -88,6 +81,9 @@
                       <tbody>
                           <?php foreach($booking as $booked): ?>
                         <tr>
+                        <td>
+                          <?php echo $booked->booking_id; ?>
+                          </td>
                           <td>
                           <?php echo $booked->fullname; ?>
                           </td>
@@ -100,10 +96,10 @@
                           <td>
                           <?php echo $booked->email; ?>
                           </td>
-                          <td class="text-primary">
+                          <td>
                           <?php echo $booked->phone; ?>
                           </td>
-                          <td>
+                          <td class="text-primary">
                           <?php echo $booked->booking_number; ?>
                           </td>
                           <td>
@@ -113,22 +109,19 @@
                           <?php echo $booked->status_name; ?>
                           </td>
                           <td>
-                          <?php if($booked->status == 2): ?> 
-                        <?php echo $booked->status_name; ?>
-                       
-                        <hr>
-                        <?php elseif($booked->status == 3): ?>
-                        <?php echo $booked->status_name ?>
-
-                        <?php else:?>
-                        <a href="<?php echo base_url(); ?>Admin/accept/<?php echo $booked->booking_id ?>">
+                          
+                        <!-- <a href="<?php echo base_url(); ?>Admin/accept/<?php echo $booked->booking_id ?>">
                             <button name='status' value='2' class="btn btn-primary btn-sm" >finalize request</button> 
                             </a>
 
                             <a href="<?php echo base_url(); ?>Admin/rejected/<?php echo $booked->booking_id ?>">
                             <button name='status' value='3' class="btn btn-primary btn-sm" >cancel request</button>
+                            </a> -->
+                            
+                            <a href="<?php echo base_url(); ?>Admin/booking/<?php echo $booked->booking_id ?>">
+                            <button name='status' value='3' class="btn btn-primary btn-sm" >view booking details</button>
                             </a>
-                        <?php endif ?>
+                       
 
                           </td>
                         </tr>

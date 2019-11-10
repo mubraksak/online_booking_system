@@ -51,38 +51,60 @@
                 <div class="card-body">
                   <div class="table-responsive">
 
-                    <form>
+                 
                     <div class="row">
                     <?php foreach($booking as $booked): ?>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->fullname; ?></small></h4>
+                        <h4>Full Name: <small><?php echo $booked->fullname; ?></small></h4>
                     </div>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->gender; ?></small></h4>
+                        <h4>gender: <small><?php echo $booked->gender; ?></small></h4>
                     </div>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->age; ?></small></h4>
+                        <h4>age: <small><?php echo $booked->age; ?></small></h4>
                     </div>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->email; ?></small></h4>
+                        <h4>email: <small><?php echo $booked->email; ?></small></h4>
                     </div>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->email; ?></small></h4>
+                        <h4>phone number: <small><?php echo $booked->phone; ?></small></h4>
                     </div>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->booking_number; ?></small></h4>
+                        <h4>booking number: <small><?php echo $booked->booking_number; ?></small></h4>
                     </div>
                     <div class="col-md-4">
-                        <h4>Name: <small><?php echo $booked->status_name; ?></small></h4>
+                        <h4>booked item: <small><?php echo $booked->product_name; ?></small></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>caegory: <small><?php echo $booked->product_category; ?></small></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>price: <small><?php echo $booked->product_price; ?></small></h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>booking status: <small><?php echo $booked->status_name; ?></small></h4>
                     </div>
 
-                    <?php endforeach ?>
+                        <?php if($booked->status == 2): ?> 
+                        <?php echo $booked->status_name; ?>
+                        <hr>
+                        <?php elseif($booked->status == 3): ?>
+                        <?php echo $booked->status_name; ?>
+                        <!-- this code display approve and reject button.. -->
+
+                        <?php else:?>
+                        <!-- this is the finalize request button -->
+                            <a href="<?php echo base_url(); ?>Admin/accept/<?php echo $booked->booking_id ?>">
+                            <button name='status' value='2' class="btn btn-primary btn-sm" >finalize request</button> 
+                            </a>
+                        <!-- this is the cancel request button -->
+                            <a href="<?php echo base_url(); ?>Admin/rejected/<?php echo $booked->booking_id ?>">
+                            <button name='status' value='3' class="btn btn-primary btn-sm" >cancel request</button>
+                            </a>
+                        <?php endif ?>
+                        <!-- ends for each loop -->
+                        <?php endforeach ?>
                     </div>
-
-
-                   
-
-                    </form>
 
 
                     <!-- <table class="table">

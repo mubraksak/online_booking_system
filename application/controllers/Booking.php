@@ -2,6 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Booking extends CI_Controller {
+
+      //validate user login season
+        function __construct() {
+          parent::__construct();
+          if (!$this->session->userdata('user')) {
+              $this->session->set_flashdata('success', 'Login Required');
+              redirect('home/login_page');
+          }
+      }
  
 
 //this functions loads the products from database to view

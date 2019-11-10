@@ -97,11 +97,11 @@
                                     </div>
                                     <div class="col-6 col-lg-12 text-center">
                                         <span class="text-muted text-center">
-                                            Total Rooms:
+                                        Rooms Number:
                                         </span>
                                     </div>
                                     <div class="col-6 col-lg-12 h5 text-center">
-                                        <text id="total_quantity">1</text>
+                                        <text id="total_quantity"><?php echo $product->room_number ?></text>
                                     </div>
                                 </div>
                             </div>

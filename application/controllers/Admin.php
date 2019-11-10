@@ -33,6 +33,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/admin', $data);
 	}
 
+	// loads single booking page
 	public function booking($booking_id = 'booking_id'){
 		//validate admin login
 		if (!$this->session->userdata('admin')) {
@@ -46,10 +47,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/single_booking', $data);
 	}
 
+	// this function allow admin to accept user request.
 	public function accept($booking_id) {
-		$profile = $this->Admin_model->get_bookings($booking_id);
-		if ( $profile->status == 1) {
-			$data['status'] = '2';
+		$profile = $this->Admin_model->get_booking_id($booking_id);
+		if ( $profile && $profile->status == 1) {
+			$data['status'] = "2";
 			$this->Admin_model->update_booking($booking_id, $data);
 			$this->session->set_flashdata('success', 'booking complited Successfully !!!');
 			redirect('admin/index');
@@ -59,18 +61,21 @@ class Admin extends CI_Controller {
 		redirect('Home/error');
 	}
 
+	// this function allow admin to disapprove a request
 	public function rejected($booking_id) {
-		$profile = $this->Admin_model->get_bookings($booking_id);
-		if ($profile->status == 1) {
-			$data['status'] = '3';
+		$profile = $this->Admin_model->get_booking_id($booking_id);
+		if ($profile && $profile->status == 1) {
+			$data['status'] = "3";
 			$this->Admin_model->update_booking($booking_id, $data);
 			$this->session->set_flashdata('success', 'booking Rejected Successfully !!!');
-			redirect('admin/index');
+			redirect('Admin/index');
 		} else {
-			$this->session->set_flashdata('success', 'Not Applicable');
+			$this->session->set_flashdata('success', 'request crashed');
 		}
 		redirect('Home/error');
 	}
+
+	// this function allow admin to add new product to their products
 	public function add_product(){
         //validate rules
         $this->form_validation->set_rules('produt_name', 'produt_name', 'trim|required');

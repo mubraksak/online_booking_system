@@ -28,9 +28,8 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
             <h1>Yankari Game Reserve</h1>
-            <h3 class="title text-center">do you want to explore the safari world during your vacation or have a good feel of the natural spring water then yakari game reserve is the best palce for you.  <br>
-            <a href="<?php echo base_url(); ?>Home/login_page" class="btn btn-primary">book for your vacation now</a>
-           
+            <h3 class="title text-center">do you want to explore the safari world during your vacation or have a good feel of the natural spring water then yakari game reserve is the best palce for you.  <br> 
+            <a href="<?php echo base_url(); ?>Booking/bookings/0/<?php echo "" ?>" class="btn btn-primary">book for your vacation now</a>
             </h3>
           </div>
         </div>

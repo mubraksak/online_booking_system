@@ -59,7 +59,6 @@
   <div class="main main-raised">
             <div class="container">
               <div class="section text-center">
-
                 <div class="row justify-content-center">
                 <?php foreach($products as $product) : ?>
                     <div class="col-sm-12 col-md-4 col-lg-3">

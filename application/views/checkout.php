@@ -77,6 +77,7 @@
               <div class="section text-center">
               <div class="main" >
                 <form action="<?php echo base_url(); ?>/User/order/<?php echo $product->product_id ?>/<?php echo $user->user_id ?>" class="form-horizontal validate" id="order_form" method="post" accept-charset="utf-8">
+               
                 <div class="row">
                     <div class="col-12"><br></div>
                     <div class="col-12"><br></div>
@@ -93,7 +94,7 @@
                                         </div>
                                         <div class="col-8">1. USER/VISITOR DETAILS</div>
                                         <a id="add_address_link" data-toggle="modal" data-target="#add_address_modal" class="col-3 text-primary text-right justify-content-end" href="#">
-                                            <i class="now-ui-icons ui-1_simple-add"></i> Add
+                                            <!-- <i class="now-ui-icons ui-1_simple-add"></i> Add -->
                                         </a>
                                         <a id="edit_1" onclick="unhide(1)" href="#" style="display: none">
                                             <i class="now-ui-icons ui-2_settings-90"></i> Edit
@@ -107,34 +108,24 @@
                                         <p class="text-center text-muted" style="font-style: italic">
                                             Please comfirm if the user details is correct
                                         </p>
-                                         
-                                            <div class="form-check-radio offset-1 col-1">
-                                                <label class="form-check-label">
-                                                    <input name="address" class="form-check-input" type="radio" value="20" checked="">
-                                                    <span class="form-check-sign"></span>
-                                                </label>
-                                            </div>
-                                            <div class="col-12">
-                                                <form>
+                                            <div class="col-12">  
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                    fullname: <input class="form-control"  type='text' value="<?php echo $user->fullname ?>" />
+                                                    fullname:<h5> <?php echo $user->fullname ?></h5>
                                                     </div>
                                                     <div class="col-md-6">
-                                                    Age: <input class="form-control"  type='text' value="<?php echo $user->age ?>" />
+                                                    Age:<h5> <?php echo $user->age ?></h5>
                                                     </div>
                                                     <div class="col-md-6">
-                                                    gender: <input class="form-control"  type='text' value="<?php  echo $user->gender ?>" />
+                                                    gender:<h5><?php  echo $user->gender ?></h5>
                                                     </div>
                                                     <div class="col-md-6">
-                                                    Email: <input class="form-control"  type='text' value="<?php echo $user->email ?>" />
+                                                    Email:<h5><?php echo $user->email ?></h5>
                                                     </div>
                                                     <div class="col-md-6">
-                                                    phone Number: <input class="form-control"  type='text' value="<?php  echo $user->phone ?>" />
-                                                    </div>
-                                                    
+                                                    phone Number:<h5><?php  echo $user->phone ?></h5>
+                                                    </div>   
                                                 </div>
-                                                </form>
                                             </div>
 
                                             <div class="col-12"><br></div>
