@@ -37,6 +37,7 @@ Class User_model extends CI_Model{
 
         $this->db->insert('users', $data);
     }
+    
     //
     // public function get_all_kids($parent_id) {
     //     $this->db->select('*');

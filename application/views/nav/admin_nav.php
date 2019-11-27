@@ -23,7 +23,7 @@
   <nav class="navbar -transparent navbar-color-info fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://di-hub.com">
+        <a class="navbar-brand" href="<?php echo base_url(); ?>">
           yankari </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -34,26 +34,29 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="material-icons"></i>Add_product
-            </a>
-          </li>
+        
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo base_url(); ?>Admin/index">
               <i class="material-icons"></i>review_bookings
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="material-icons"></i>edit_product
+            <a class="nav-link" href="<?php echo base_url(); ?>Admin/add_product_page">
+              <i class="material-icons"></i>Add_product
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>Admin/product_list">
+              <i class="material-icons"></i>product list
+            </a>
+          </li>
+          
           <li class="nav-item">
             <a href="<?php echo base_url(); ?>Home/logout_admin" class="nav-link" >
               <i class="material-icons"></i> Logout
             </a>
-
           </li>
          
         </ul>

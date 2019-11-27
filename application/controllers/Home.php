@@ -55,7 +55,7 @@ class Home extends CI_Controller {
 		
             $this->Registration_model-> user_registration();
             $this->session->set_flashdata('success', 'Registration Successfull. Check Your Mail to confirm your email address');
-            redirect('Home/login_page cx');
+            redirect('Home/login_page');
         }
 	}
 

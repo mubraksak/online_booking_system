@@ -38,8 +38,8 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">welcome Mr Admin</h4>
-                  <p class="card-category"> pls check out the new booking and approve them</p>
+                  <h4 class="card-title ">product list</h4>
+                  <p class="card-category"> </p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -51,78 +51,49 @@
                           ID
                         </th>
                         <th>
-                        visitor name
+                           product name
                         </th>
                         <th>
-                          Age 
+                          product_category 
                         </th>
                         <th>
-                          Gender 
+                          product price 
                         </th>
                         <th>
-                        email
+                        vat
                         </th>
                         <th>
-                          phone number
-                        </th>
-                        <th>
-                        booking mumber
-                        </th>
-                        <th>
-                        booked item
-                        </th>
-                        <th>
-                      booking status
+                         product number
                         </th>
                         <th>
                       Action
                         </th>
                       </thead>
                       <tbody>
-                          <?php foreach($booking as $booked): ?>
+                          <?php foreach($products as $product): ?>
                         <tr>
                         <td>
-                          <?php echo $booked->booking_id; ?>
+                          <?php echo $product->product_id; ?>
                           </td>
                           <td>
-                          <?php echo $booked->fullname; ?>
+                          <?php echo $product->product_name; ?>
                           </td>
                           <td>
-                          <?php echo $booked->age; ?>
+                          <?php echo $product->product_category; ?>
                           </td>
                           <td>
-                          <?php echo $booked->gender; ?>
+                          <?php echo $product->product_price; ?>
                           </td>
                           <td>
-                          <?php echo $booked->email; ?>
+                          <?php echo $product->vat; ?>
                           </td>
                           <td>
-                          <?php echo $booked->phone; ?>
-                          </td>
-                          <td class="text-primary">
-                          <?php echo $booked->booking_number; ?>
+                          <?php echo $product->room_number; ?>
                           </td>
                           <td>
-                          <?php echo $booked->product_name; ?>
-                          </td>
-                          <td>
-                          <?php echo $booked->status_name; ?>
-                          </td>
-                          <td>
-                          
-                        <!-- <a href="<?php echo base_url(); ?>Admin/accept/<?php echo $booked->booking_id ?>">
-                            <button name='status' value='2' class="btn btn-primary btn-sm" >finalize request</button> 
+                            <a href="<?php echo base_url(); ?>Admin/edit_product/<?php echo $product->product_id ?>">
+                            <button class="btn btn-primary btn-sm" >edit product</button>
                             </a>
-
-                            <a href="<?php echo base_url(); ?>Admin/rejected/<?php echo $booked->booking_id ?>">
-                            <button name='status' value='3' class="btn btn-primary btn-sm" >cancel request</button>
-                            </a> -->
-                            
-                            <a href="<?php echo base_url(); ?>Admin/booking/<?php echo $booked->booking_id ?>">
-                            <button class="btn btn-primary btn-sm" >view booking details</button>
-                            </a>
-                       
-
                           </td>
                         </tr>
                        <?php endforeach ?>

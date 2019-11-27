@@ -53,11 +53,11 @@
             <div class="container">
               <div class="section text-center">
 
-               <form action="<?php echo base_url(); ?>User/checkout/<?php echo $product->product_id; ?>/<?php echo $user->user_id; ?>" class="form-horizontal form-groups-bordered validate" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+               <form action="<?php echo base_url(); ?>Booking/checkout/<?php echo $product->product_id; ?>/<?php echo $user->user_id; ?>" class="form-horizontal form-groups-bordered validate" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                     <div class="col-10 offset-1 col-lg-8 offset-lg-2 card container">
                         <div class="row">
                            
-                            <img class="col-sm-12 col-lg-3" src="http://localhost/gidangona/upload/product/1.jpg" alt="" width="100%" height="150">
+                            <img class="col-sm-12 col-lg-3" src="<?php echo base_url() ?>assets/img/yankari/yankaribg.jpg" alt="" width="100%" height="150">
                             <div class="col-sm-12 col-lg-3">
                                 <div class="row text-center" style="vertical-align: central;">
                                     <div class="col-4 col-lg-12">

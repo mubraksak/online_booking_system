@@ -76,8 +76,16 @@
             <div class="container">
               <div class="section text-center">
               <div class="main" >
-                <form action="<?php echo base_url(); ?>/User/order/<?php echo $product->product_id ?>/<?php echo $user->user_id ?>" class="form-horizontal validate" id="order_form" method="post" accept-charset="utf-8">
-               
+                <form action="<?php echo base_url(); ?>/Booking/order/<?php echo $product->product_id ?>/<?php echo $user->user_id ?>" class="form-horizontal validate" id="order_form" method="post" accept-charset="utf-8">
+
+                <?php $booking_number = rand(11111111, 99999999) ?>
+                <input name="booking_number" value="<?php echo $booking_number; ?>" hidden >
+                <input name="product" value="<?php echo $product->product_id; ?>" hidden >
+                <input name="status" value="<?php echo "1"; ?>" hidden >
+                <input name="user" value="<?php echo $user->user_id; ?>" hidden >
+
+
+
                 <div class="row">
                     <div class="col-12"><br></div>
                     <div class="col-12"><br></div>
@@ -154,7 +162,6 @@
                                 <div id="body_2" class="col-12" style="display: none">
                                     <div class="row">
                                         <p class="text-center text-muted" style="font-style: italic">
-                                           
                                         </p>
                                         <div class="form-check-radio offset-1 col-1">
                                             <label class="form-check-label">
@@ -194,7 +201,7 @@
                         <h4 class="col-12 h4 text-center text-info">Order Summary</h4>
                              <div class="col-12 col-lg-10 offset-lg-0 card container">
                                 <div class="row">
-                                    <img class="col-5" src="http://localhost/gidangona/upload/product/1.jpg" alt="" width="100%" height="80">
+                                    <img class="col-5" src="<?php echo base_url() ?>assets/img/yankari/yankaribg.jpg" alt="" width="100%" height="80">
                                     <div class=" col-7">
                                         <div class="row">
                                             <div class="col-12">

@@ -64,7 +64,7 @@
                     <div class="col-sm-12 col-md-4 col-lg-3">
                     <div class="card col-12">
                         <a href="<?php echo base_url(); ?>/market/price/3">
-                            <img class="img-raised" src="http://localhost/gidangona/upload/product/1.jpg" alt="" width="100%" height="140">
+                            <img class="img-raised" src="<?php echo base_url() ?>assets/img/yankari/yankaribg.jpg" alt="" width="100%" height="140">
                         </a>
                         &nbsp;
                         <div class="row" style="font-size: smaller;">

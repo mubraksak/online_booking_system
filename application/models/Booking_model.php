@@ -1,13 +1,5 @@
-<?php 
-
-
+<?php
 Class Booking_model extends CI_Model{
-
-
-
-
-
-
     //this functions register new product booking
     public function product_booking(){
         $data = array(
@@ -24,13 +16,9 @@ Class Booking_model extends CI_Model{
             'booking_number' => $this->input->post('booking_number'),
             'status' => $this->input->post('status'),
             'product' => $this->input->post('product'),
-            'user' => $this->input->post('user'),
-            
-            
+            'users' => $this->input->post('user'),
         );
-
         $this->db->insert('booking', $data);
-       
     }
 
     // this function gets all bookings
@@ -42,10 +30,10 @@ Class Booking_model extends CI_Model{
     }
 
         // this function gets single booking using booking number
-        public function get_single_bookings() {
+        public function get_single_booking($booking_id) {
             $this->db->select('*');
             $this->db->from('booking');
-            $this->db->where('booking_number', $booking_number);
+            $this->db->where('booking_id', $booking_id);
             $query = $this->db->get();
             return $query->row();
     }

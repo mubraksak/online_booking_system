@@ -28,7 +28,6 @@
                     showNotification("top", "center", " <?php echo $this->session->flashdata('success'); ?>", "info", "ui-1_check");
                 }, false);
             </script>
-            
         <?php endif; ?>
         <?php if ($this->session->flashdata('error')) : ?>
             <script>
@@ -36,7 +35,6 @@
                     showNotification("top", "center", " <?php echo $this->session->flashdata('error'); ?>", "danger", "travel_info");
                 }, false);
             </script>
-         
         <?php endif; ?>
 
 
