@@ -39,7 +39,12 @@
               <input type="text" class="form-control" name="product_name" placeholder="Product Name">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" name="product_category" placeholder="Product Category">
+						<select name="product_category" class="form-control" >
+								<option  class="form-control" palceholder="please select a category">please select a category</option>
+								<option  class="form-control" value="hotel">hotel</option>
+								<option  class="form-control" value="reservation">reservation</option>
+								<option  class="form-control" value="safari tour">safari tour</option>
+						</select>
             </div>
             <div class="col-md-6">
               <input type="text" class="form-control" name="product_price" placeholder="Product price">

@@ -1,163 +1,121 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Material Kit by Creative Tim
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="<?php echo base_url(); ?>assets/demo/demo.css" rel="stylesheet" />
-</head>
-
-<body class="login-page sidebar-collapse">
+    <head>
+        <title>Yankari game Reserve</title>
+        <meta charset="utf-8" />
+        <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/favicon.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <!-- CSS Files -->
+        <link href="<?php echo base_url(); ?>assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="<?php echo base_url(); ?>assets/demo/demo.css" rel="stylesheet" />
+    </head>
 
 
-<?php if ($this->session->flashdata('success')) : ?>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    showNotification("top", "center", " <?php echo $this->session->flashdata('success'); ?>", "info", "ui-1_check");
-                }, false);
-            </script>
-            
-        <?php endif; ?>
-        <?php if ($this->session->flashdata('error')) : ?>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    showNotification("top", "center", " <?php echo $this->session->flashdata('error'); ?>", "danger", "travel_info");
-                }, false);
-            </script>
-         
-        <?php endif; ?>
+    <?php $this->load->view('nav/nav') ?>
 
-
- <?php $this->load->view('nav/nav');  ?>
-
-  <div class="page-header header-filter" style="background-image: url('<?php echo base_url(); ?>assets/img/yankari/yankarigre.jpg'); background-size: cover; background-position: top center;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 ml-auto mr-auto">
-          <div class="card card-login">
-          <?php echo form_open('homepage/login/', array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data')); ?>
-              <div class="card-header card-header-primary text-center">
-                <h4 class="card-title">book a safari ticket</h4>
-              </div>
-              <p class="description text-center">welcome to yankari game reserve home of</p>
-              <div class="card-body">
+    <!-- main body -->
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url(); ?>assets/img/yankari/yankariaf.jpg')">
+        <div class="container">
             <div class="row">
+                <div class="col-md-12 ml-auto mr-auto">
+                    <div class="brand text-center">
+                        <div class="row">
+                        </div>
+                        <div>
+                            <h2>or track your previous  booking</h2>
+                            <form>
+                                <input type="text" name="booking_id" placeholder="enter your booking id" />
+                                <button class="btn btn-nuetral"> submit </button>
+                            </form>
+                        </div>
 
-            <div class="col-md-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">mail</i>
-                    </span>
-                  </div>
-                  <select class="form-control form-dropdown">
-                  <option>choose an item</option>
-                  <option>hotels</option>
-                  <option>resturants</option>
-                  <option>game reserve</option>
-                  <option>spring water</option>
-                  <option>caves</option>
-                  </select>
+                    </div>
                 </div>
-                </div>
-                
-                <div class="col-md-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">mail</i>
-                    </span>
-                  </div>
-                  <select class="form-control form-dropdown">
-                  <option>category</option>
-                  <option>hotels</option>
-                  <option>resturants</option>
-                  <option>game reserve</option>
-                  <option>spring water</option>
-                  <option>caves</option>
-                  </select>
-                </div>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">mail</i>
-                    </span>
-                  </div>
-                  <select class="form-control form-dropdown">
-                  <option>number of kids</option>
-                  <option>hotels</option>
-                  <option>resturants</option>
-                  <option>game reserve</option>
-                  <option>spring water</option>
-                  <option>caves</option>
-                  </select>
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">mail</i>
-                    </span>
-                  </div>
-                  <select class="form-control form-dropdown">
-                  <option>number of adults</option>
-                  <option>hotels</option>
-                  <option>resturants</option>
-                  <option>game reserve</option>
-                  <option>spring water</option>
-                  <option>caves</option>
-                  </select>
-                </div>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6">
-                 <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">mail</i>
-                    </span>
-                  </div>
-                  <input type="date" class="form-control" name="username" placeholder="Username...">
-                </div>
-                </div>
-                <div class="col-md-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">mail</i>
-                    </span>
-                  </div>
-                  <input type="date" class="form-control" name="username" placeholder="Username...">
-                </div>
-               </div>
-               </div>
-               </div>
-              <br><br><br>
-              <div class="footer text-center">
-                <input  type='submit' name='submit'  class="btn btn-primary btn-lg  "></a>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-    <footer class="footer">
-    <?php $this->load->view('nav/footer_nav')  ?>
+
+
+
+
+    <div class="main main-raised">
+        <div class="container">
+            <div class="section text-center">
+
+                <form action="<?php echo base_url(); ?>Booking/checkout/<?php echo $product->product_id; ?>/<?php echo $user->user_id; ?>" class="form-horizontal form-groups-bordered validate" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                    <div class="col-10 offset-1 col-lg-8 offset-lg-2 card container">
+                        <div class="row">
+
+                            <img class="col-sm-12 col-lg-3" src="<?php echo base_url() ?>assets/img/yankari/yankaribg.jpg" alt="" width="100%" height="150">
+                            <div class="col-sm-12 col-lg-3">
+                                <div class="row text-center" style="vertical-align: central;">
+                                    <div class="col-4 col-lg-12">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-sm-12 col-lg-3">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <h5 class="h5 text-center">
+                                            <?php echo $product->product_name; ?>
+                                        </h5>
+                                    </div>
+                                    <div class="col-6 col-lg-12 h5 text-center">
+                                        category:
+                                        <text class="text-danger" ><?php echo $product->product_category; ?></text>
+                                    </div>
+                                    <div class="col-6 h5 col-lg-12 text-center">
+                                        <span class="text-primary text-center">
+                                            <?php echo '₦' . $product->product_price ?>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center col-sm-12 col-lg-3"><br>
+                                <div class="row">
+                                    <div class="col-6 col-lg-12 text-center">
+                                        <span class="text-muted text-center">
+                                            Total Price:
+                                        </span>
+                                    </div>
+                                    <div class="col-6 col-lg-12">
+                                        <h5 class="text-info text-center" id="total_price">
+                                            <?php echo '₦' . $product->product_price ?>
+                                        </h5>
+                                    </div>
+                                    <div class="col-6 col-lg-12 text-center">
+                                        <span class="text-muted text-center">
+                                            Rooms Number:
+                                        </span>
+                                    </div>
+                                    <div class="col-6 col-lg-12 h5 text-center">
+                                        <text id="total_quantity"><?php echo $product->room_number ?></text>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-info">
+                            Checkout
+                            <i class="now-ui-icons ui-1_send"></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-default">
+        <?php $this->load->view('nav/footer_nav') ?>

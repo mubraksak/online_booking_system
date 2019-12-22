@@ -25,13 +25,20 @@ public function bookings($product_id = 'product_id', $user_id = 'user_id') {
     $this->load->view('booknow', $data);
 		}
   // this function loads the spring water booking page
-  public function spring_booking(){
-  $this->load->view('spring_booking');
+  public function spring_booking($product_id = 'product_id' ){
+
+		$data['product'] = $this->Product_model->get_spring($product_id);
+		$data['user'] = $this->User_model->get_single_user($this->session->userdata('user')->user_id);
+
+  $this->load->view('spring_booking' , $data);
   }
 
   // this function laods the safari booking page
-  public function safari_booking(){
-  $this->load->view('safari_booking');
+  public function safari_booking($product_id = 'product_id' ){
+		$data['product'] = $this->Product_model->get_spring($product_id);
+		$data['user'] = $this->User_model->get_single_user($this->session->userdata('user')->user_id);
+
+  $this->load->view('safari_booking', $data);
   }
 
   // this function register the booking for hotels
@@ -60,7 +67,7 @@ public function bookings($product_id = 'product_id', $user_id = 'user_id') {
 
     $data['booked'] = $this->Booking_model->get_single_booking($booking_id);
     $data['user'] = $this->User_model->get_single_user($this->session->userdata('user')->user_id);
-    $booking =$this->Booking_model->get_single_booking($booking_id);
+    //$booking =$this->Booking_model->get_single_booking($booking_id);
     //the function load the slip view...
 		$this->load->view('slip', $data);
   }

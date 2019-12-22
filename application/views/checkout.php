@@ -32,8 +32,8 @@
                     document.getElementById("body_2").style.display = "block";
                 }  else {
                     document.getElementById("finish_btn").removeAttribute("disabled");
-                }
             }
+		}
             function unhide(id) {
                 if (id === 1) {
                     document.getElementById("add_address_link").style.display = "block";
@@ -56,13 +56,12 @@
                     document.getElementById("finish_btn").setAttribute("disabled", true);
                 }
             }
-
             function submitOrder() {
                 if (document.getElementById("payment_card").checked) {
                     payWithPayant();
                 } else {
                     $('#order_form').submit();
-                }
+				}
             }
         </script>
 </head>
@@ -78,7 +77,7 @@
               <div class="main" >
                 <form action="<?php echo base_url(); ?>/Booking/order/<?php echo $product->product_id ?>/<?php echo $user->user_id ?>" class="form-horizontal validate" id="order_form" method="post" accept-charset="utf-8">
 
-                <?php $booking_number = rand(11111111, 99999999) ?>
+                <?php $booking_number = uniqid() ?>
                 <input name="booking_number" value="<?php echo $booking_number; ?>" hidden >
                 <input name="product" value="<?php echo $product->product_id; ?>" hidden >
                 <input name="status" value="<?php echo "1"; ?>" hidden >
@@ -201,7 +200,13 @@
                         <h4 class="col-12 h4 text-center text-info">Order Summary</h4>
                              <div class="col-12 col-lg-10 offset-lg-0 card container">
                                 <div class="row">
-                                    <img class="col-5" src="<?php echo base_url() ?>assets/img/yankari/yankaribg.jpg" alt="" width="100%" height="80">
+								<?php if($product->product_category =='reservation'): ?>
+								<img class="col-5" src="<?php echo base_url() ?>assets/img/yankari/yankariaf.jpg" alt="" width="100%" height="80">
+							<?php elseif($product->product_category == 'safari tour'): ?>
+							<img class="col-5" src="<?php echo base_url() ?>assets/img/yankari/yankaricave.jpg" alt="" width="100%" height="80">
+							<?php else : ?>
+							<img class="col-5" src="<?php echo base_url() ?>assets/img/yankari/yankaribg.jpg" alt="" width="100%" height="80">
+							<?php endif;  ?>
                                     <div class=" col-7">
                                         <div class="row">
                                             <div class="col-12">

@@ -30,7 +30,6 @@
   <div class="main main-raised">
     <div class="profile-content">
       <div class="container section text-center">
-        
       <?php echo form_open('Admin/update_product/'. $product->product_id, array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data')); ?>
         <h2 class="title">YANKARI GAME RESERVE</h2>
         <h3 class="title">edit product</h3>
@@ -39,7 +38,13 @@
               <input type="text" class="form-control" name="product_name" value="<?php echo $product->product_name; ?>" placeholder="Product Name">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" name="product_category" value="<?php echo $product->product_category; ?>" placeholder="Product Category">
+						<select name="product_category" class="form-control" >
+								<option  class="form-control" palceholder="please select a category"><?php echo $product->product_category; ?></option>
+								<option  class="form-control" value="hotel">hotel</option>
+								<option  class="form-control" value="reservation">reservation</option>
+								<option  class="form-control" value="safari tour">safari tour</option>
+						</select>
+              <!-- <input type="text" class="form-control" name="product_category" value="<?php echo $product->product_category; ?>" placeholder="Product Category"> -->
             </div>
             <div class="col-md-6">
               <input type="text" class="form-control" name="product_price" value="<?php echo $product->product_price; ?>" placeholder="Product price">

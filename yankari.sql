@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2019 at 09:27 PM
+-- Generation Time: Dec 17, 2019 at 02:31 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -63,14 +63,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `booking_number`, `product`, `status`, `users`) VALUES
-(1, 39749389, 2, 3, 2),
-(3, 66360487, 1, 2, 1),
-(5, 23737203, 1, 3, 1),
-(6, 89907198, 1, 1, 1),
-(7, 13112101, 1, 1, 1),
-(8, 31199703, 1, 1, 1),
-(9, 57758046, 1, 1, 1),
-(10, 79095736, 1, 1, 1);
+(1, 51521417, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -92,8 +85,11 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_category`, `product_name`, `product_price`, `vat`, `room_number`) VALUES
-(1, 'Hotel', 'studio suite', 5000, 100, '002'),
-(2, 'Hostel ', 'student hostel', 2500, 50, '004');
+(1, 'Hotels', 'studio suite', 5000, 105, '002'),
+(2, 'Hostels', 'student hostel', 2500, 50, '4500'),
+(3, 'hotel room', 'hotel room', 50, 400, '345'),
+(4, 'reservation', 'spring water', 1000, 0, ''),
+(5, 'safari tour', 'safari ', 2000, 0, '');
 
 -- --------------------------------------------------------
 
@@ -194,13 +190,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `status`
